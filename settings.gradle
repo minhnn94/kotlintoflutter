@@ -1,0 +1,9 @@
+include ':app'
+rootProject.name = "TodoListKotlin"
+setBinding(new Binding([gradle: this]))                                // new
+evaluate(new File(                                                     // new
+        settingsDir.parentFile,                                              // new
+        '../2022/my_flutter/.android/include_flutter.groovy'                         // new
+))
+include ':my_flutter'
+project(':my_flutter').projectDir = new File('../../2022/my_flutter')
